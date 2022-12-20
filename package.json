@@ -9,8 +9,8 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
-    "prettier:check": "prettier --check .",
-    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+    "prettier:check": "prettier --check ./**/*.{js,jsx,ts,tsx,css,md,json}",
+    "prettier:format": "prettier --write ./**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc",
     "prepare": "husky install",
     "check:all": "tsc && yarn run lint && yarn run prettier:check"
   },
