@@ -5,14 +5,20 @@
     "jest": true
   },
   "extends": [
-    "eslint:recommended",
+    "airbnb",
+    "airbnb-typescript",
+    "airbnb/hooks",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
     "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended"
   ],
+
   "overrides": [],
   "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
   "plugins": ["react", "react-hooks", "prettier", "@typescript-eslint"],
   "rules": {
     "react/jsx-uses-react": "off",
