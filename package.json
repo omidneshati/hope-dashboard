@@ -12,7 +12,8 @@
     "prettier:check": "prettier --check ./**/*.{js,jsx,ts,tsx,css,md,json}",
     "prettier:format": "prettier --write ./**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc",
     "prepare": "husky install",
-    "check:all": "tsc && yarn run lint && yarn run prettier:check"
+    "check:all": "tsc && yarn run lint && yarn run prettier:check",
+    "coverage": "vitest run --coverage"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
@@ -25,6 +26,8 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
@@ -41,11 +44,13 @@
     "eslint-plugin-react": "7.28.0",
     "eslint-plugin-react-hooks": "4.3.0",
     "husky": "^8.0.0",
+    "jsdom": "latest",
     "lint-staged": "^13.1.0",
     "postcss": "^8.4.19",
     "prettier": "^2.8.0",
     "tailwindcss": "^3.2.4",
     "typescript": "^4.6.4",
-    "vite": "^3.2.3"
+    "vite": "latest",
+    "vitest": "latest"
   }
 }
