@@ -13,7 +13,8 @@
     "prettier:format": "prettier --write ./**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc",
     "prepare": "husky install",
     "check:all": "tsc && yarn run lint && yarn run prettier:check",
-    "coverage": "vitest run --coverage"
+    "test": "vitest",
+    "coverage": "vitest --coverage"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
@@ -33,6 +34,7 @@
     "@typescript-eslint/eslint-plugin": "^5.45.0",
     "@typescript-eslint/parser": "^5.45.0",
     "@vitejs/plugin-react": "^2.2.0",
+    "@vitest/coverage-c8": "^0.26.2",
     "autoprefixer": "^10.4.13",
     "eslint": "8.2.0",
     "eslint-config-airbnb": "19.0.4",
