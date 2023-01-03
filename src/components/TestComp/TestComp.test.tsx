@@ -4,16 +4,16 @@ import user from '@testing-library/user-event';
 import TestComp from './index';
 
 describe('testing', () => {
-  test('test user event', () => {
+  test('test user event', async () => {
     render(<TestComp />);
     const button = screen.getByRole('button');
 
-    user.click(button);
+    await user.click(button);
 
     const element = screen.getByRole('heading', {
       level: 2
     });
 
-    expect(element.textContent).toBe(1);
+    expect(element.textContent).toBe('1');
   });
 });
