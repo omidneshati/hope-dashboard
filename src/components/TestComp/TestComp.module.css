@@ -1,0 +1,6 @@
+p {
+  direction: rtl;
+}
+.testWriteMode {
+  writing-mode: horizontal-tb;
+}

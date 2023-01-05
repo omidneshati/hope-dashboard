@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import style from './TestComp.module.css';
+
 function TestComp() {
   const [num, setNum] = useState(0);
 
@@ -12,6 +14,7 @@ function TestComp() {
       <button type="button" onClick={increaseNum}>
         Click ME
       </button>
+      <p className={style.testWritMode}>Omid Neshati</p>
     </div>
   );
 }
