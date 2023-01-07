@@ -1,7 +1,7 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 
 import TestComp from './components/TestComp';
-import Home from './pages/home';
+import Home from './pages/Home';
 import Customer from './pages/Customer';
 import Inventory from './pages/Inventory';
 import Order from './pages/Order';
