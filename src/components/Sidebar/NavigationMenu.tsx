@@ -1,5 +1,3 @@
-// array of objects includes name of page, icon of page and link
-
 import { NavLink } from 'react-router-dom';
 import type { IconType } from 'react-icons/lib';
 
