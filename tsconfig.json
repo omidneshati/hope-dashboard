@@ -15,7 +15,10 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "paths": { "@redux/*": ["./src/redux/*"] }
+    "baseUrl": "src",
+    "paths": {
+      "@/redux/*": ["redux/*"]
+    }
   },
   "include": ["vite.config.ts", ".eslintrc.json", "setupTests.ts", "src"],
   "references": [{ "path": "./tsconfig.node.json" }]
