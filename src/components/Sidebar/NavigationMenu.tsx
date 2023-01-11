@@ -33,11 +33,13 @@ export default function NavigationMenu() {
     <>
       {pages.map((page) => {
         return (
-          <li key={page.title}>
-            <i>
+          <li key={page.title} className={`flex items-center `}>
+            <i className="3">
               <page.icon />
             </i>
-            <NavLink to={page.link}>{page.title}</NavLink>
+            <NavLink to={page.link} className={`pli-2 `}>
+              {page.title}
+            </NavLink>
           </li>
         );
       })}

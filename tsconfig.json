@@ -17,7 +17,8 @@
     "jsx": "react-jsx",
     "baseUrl": "src",
     "paths": {
-      "@/redux/*": ["redux/*"]
+      "@/redux/*": ["redux/*"],
+      "@/hooks/*": ["hooks/*"]
     }
   },
   "include": ["vite.config.ts", ".eslintrc.json", "setupTests.ts", "src"],

@@ -1,5 +1,7 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
+import { store } from './redux/store';
 import TestComp from './components/TestComp';
 import Home from './pages/Home';
 import Customer from './pages/Customer';
@@ -11,17 +13,21 @@ import Layout from './components/Layout';
 
 function App() {
   return (
-    <Layout>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="customer" element={<Customer />} />
-        <Route path="inventory" element={<Inventory />} />
-        <Route path="order" element={<Order />} />
-        <Route path="report" element={<Report />} />
-        <Route path="test" element={<TestComp />} />
-        <Route path="*" element={<Page404 />} />
-      </Routes>
-    </Layout>
+    <BrowserRouter>
+      <Provider store={store}>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="customer" element={<Customer />} />
+            <Route path="inventory" element={<Inventory />} />
+            <Route path="order" element={<Order />} />
+            <Route path="report" element={<Report />} />
+            <Route path="test" element={<TestComp />} />
+            <Route path="*" element={<Page404 />} />
+          </Routes>
+        </Layout>
+      </Provider>
+    </BrowserRouter>
   );
 }
 
