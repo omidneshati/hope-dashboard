@@ -18,7 +18,8 @@
     "baseUrl": "src",
     "paths": {
       "@/redux/*": ["redux/*"],
-      "@/hooks/*": ["hooks/*"]
+      "@/hooks/*": ["hooks/*"],
+      "@/components/*": ["components/*"]
     }
   },
   "include": ["vite.config.ts", ".eslintrc.json", "setupTests.ts", "src"],
