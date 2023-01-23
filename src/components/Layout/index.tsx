@@ -1,28 +1,27 @@
 import { ReactNode } from 'react';
-// import { BrowserRouter } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '@/hooks/useAppRedux';
+import { useTranslation } from 'react-i18next';
+import { useAppSelector } from '@/hooks/useAppRedux';
 import Sidebar from '../Sidebar';
-import { open } from '@/redux/slices/sidebarSlice';
+import Header from './Header';
 
 export default function Layout({ children }: { children: ReactNode }) {
   const { isOpen } = useAppSelector((state) => state.isSidebarOpen);
-  const dispatch = useAppDispatch();
+  const { language: currentLanguage } = useTranslation().i18n;
   return (
-    <main>
-      <header>
-        <div>header</div>
-        <button type="button" onClick={() => dispatch(open())}>
-          Open
-        </button>
-      </header>
+    <main dir={currentLanguage === 'fa' ? 'rtl' : undefined} className="md:grid grid-cols-6">
       <div
-        style={{
-          display: isOpen ? 'block' : 'none'
-        }}>
+        className={`${
+          isOpen ? 'block' : 'hidden'
+        } md:block col-start-1 row-start-1 h-screen fixed inset-0 bg-white `}>
         <Sidebar />
       </div>
-      {children}
-      <footer>footer</footer>
+      <div className="container flex flex-col">
+        <header className="flex px-5 py-3 h-20 items-center" dir="ltr">
+          <Header />
+        </header>
+        <div className="">{children}</div>
+        <footer className="mt-auto">footer</footer>
+      </div>
     </main>
   );
 }
