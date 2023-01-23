@@ -1,17 +1,20 @@
-import { useAppDispatch } from '@/hooks/useAppRedux';
+import SidebarToggle from '../Layout/SidebarToggle';
+import SwitchLanguageToggle from '../Layout/SwitchLanguageToggle';
 import NavigationMenu from './NavigationMenu';
-import { close } from '@/redux/slices/sidebarSlice';
 
 export default function Sidebar() {
-  const dispatch = useAppDispatch();
   return (
-    <ul>
-      <button type="button" onClick={() => dispatch(close())}>
-        Close
-      </button>
-      <div className="flex flex-col w-64 h-screen px-4 py-8 bg-white border-ie dark:bg-gray-900 dark:border-gray-700">
-        <NavigationMenu />
+    <div className="flex flex-col h-full border-ie ">
+      <div className="text-3xl font-bold mis-5 mbs-3">
+        <SidebarToggle />
       </div>
-    </ul>
+      <h2 className="text-3xl font-semibold text-gray-800 dark:text-white mx-auto mb-3">Brand</h2>
+      <div className="flex w-full justify-center ">
+        <SwitchLanguageToggle />
+      </div>
+      <nav className="flex flex-col gap-6 flex-1 mt-6">
+        <NavigationMenu />
+      </nav>
+    </div>
   );
 }
