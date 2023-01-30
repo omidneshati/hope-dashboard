@@ -1,7 +1,5 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
 
-import { store } from './redux/store';
 import TestComp from './components/TestComp';
 import Home from './pages/Home';
 import Customer from './pages/Customer';
@@ -10,11 +8,12 @@ import Order from './pages/Order';
 import Report from './pages/Report';
 import Page404 from './pages/Page404';
 import Layout from './components/Layout';
+import AppProvider from './redux/AppProvider';
 
 function App() {
   return (
     <BrowserRouter>
-      <Provider store={store}>
+      <AppProvider>
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -26,7 +25,7 @@ function App() {
             <Route path="*" element={<Page404 />} />
           </Routes>
         </Layout>
-      </Provider>
+      </AppProvider>
     </BrowserRouter>
   );
 }
