@@ -23,7 +23,17 @@
   "rules": {
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
-    "prettier/prettier": ["warn"]
+    "prettier/prettier": ["warn"],
+    "import/extensions": [
+      "error",
+      "always",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
   },
   "settings": {
     "import/resolver": {
