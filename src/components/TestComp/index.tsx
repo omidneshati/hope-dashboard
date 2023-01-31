@@ -10,8 +10,6 @@ function TestComp() {
 
   const increaseNum = () => setNum((v) => v + 1);
 
-  const langs = ['en', 'fa'];
-
   return (
     <div>
       <h1>Test</h1>
@@ -19,19 +17,6 @@ function TestComp() {
       <button type="button" onClick={increaseNum}>
         Click ME
       </button>
-      <div className="border-2 border-black space-x-1 p-5">
-        {langs.map((lang) => {
-          return (
-            <button
-              className="p-1 border border-cyan-900"
-              key={lang}
-              type="button"
-              onClick={() => changeLanguage(lang)}>
-              {lang}
-            </button>
-          );
-        })}
-      </div>
       <div>
         <i>{t('key')}</i>
         <span className={style.testWritMode}>Omid Neshati</span>
